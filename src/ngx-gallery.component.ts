@@ -278,7 +278,7 @@ export class NgxGalleryComponent implements OnInit, DoCheck, AfterViewInit   {
         this.descriptions = this.images.map((img) => <string>img.description);
         this.links = this.images.map((img) => <string>img.url);
         this.labels = this.images.map((img) => <string>img.label);
-        this.thumbText = this.thumbText.map((img) => <string>img.tText);
+        this.thumbText = this.images.map((img) => <string>img.tText);
     }
 
     private setBreakpoint(): void {
