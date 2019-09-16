@@ -14,6 +14,9 @@ import { NgxGalleryAction } from './ngx-gallery-action.model';
                 <div class="ngx-gallery-icons-wrapper">
                     <ngx-gallery-action *ngFor="let action of actions" [icon]="action.icon" [disabled]="action.disabled" [titleText]="action.titleText" (onClick)="action.onClick($event, i)"></ngx-gallery-action>
                 </div>
+                <div class="ngx-gallery-remaining-count-overlay">
+                    <span class="ngx-gallery-remaining-count">{{thumbText[i]}}</span>
+                </div>
                 <div class="ngx-gallery-remaining-count-overlay" *ngIf="remainingCount && remainingCountValue && (i == (rows * columns) - 1)">
                     <span class="ngx-gallery-remaining-count">+{{remainingCountValue}}</span>
                 </div>
@@ -36,6 +39,7 @@ export class NgxGalleryThumbnailsComponent implements OnChanges {
     @Input() images: string[] | SafeResourceUrl[];
     @Input() links: string[];
     @Input() labels: string[];
+    @Input() thumbText: string[];
     @Input() linkTarget: string;
     @Input() columns: number;
     @Input() rows: number;
